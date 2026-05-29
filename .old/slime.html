@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>That Time I Got Reincarnated as a Slime</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(90deg, #1e3a8a 0%, #7c3aed 100%);
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+    }
+
+    .header__title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .header__subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      letter-spacing: 1px;
+    }
+
+    /* Container Principal */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Card do Personagem */
+    .character-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 15px;
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      backdrop-filter: blur(10px);
+      margin-bottom: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .character-card__image {
+      background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .character-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .character-card__image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+      pointer-events: none;
+    }
+
+    .character-card__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .character-card__name {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #7c3aed;
+      font-weight: bold;
+    }
+
+    .character-card__status {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .status-badge {
+      background: linear-gradient(90deg, #7c3aed, #3b82f6);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .character-card__description {
+      line-height: 1.8;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+
+    /* Stats Section */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .stat-item {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 3px solid #7c3aed;
+      text-align: center;
+    }
+
+    .stat-item__label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 8px;
+    }
+
+    .stat-item__value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #7c3aed;
+    }
+
+    /* Skills Section */
+    .skills {
+      margin-bottom: 40px;
+    }
+
+    .skills__title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #7c3aed;
+      border-bottom: 2px solid #7c3aed;
+      padding-bottom: 10px;
+    }
+
+    .skills__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: rgba(124, 58, 237, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .skill-card:hover {
+      background: rgba(124, 58, 237, 0.2);
+      border-color: rgba(124, 58, 237, 0.6);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);
+    }
+
+    .skill-card__icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .skill-card__name {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #7c3aed;
+      margin-bottom: 8px;
+    }
+
+    .skill-card__description {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid rgba(124, 58, 237, 0.3);
+      margin-top: 40px;
+      opacity: 0.7;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .character-card {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .header__title {
+        font-size: 1.8rem;
+      }
+
+      .skills__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="header__title">⚡ That Time I Got Reincarnated as a Slime</h1>
+      <p class="header__subtitle">Tensei shitara Slime Datta Ken</p>
+    </header>
+
+    <section class="character-card">
+      <div class="character-card__image">
+        <img src="rimuru.jpg" alt="Rimuru Tempest">
+      </div>
+      <div class="character-card__content">
+        <h2 class="character-card__name">Rimuru Tempest</h2>
+        <div class="character-card__status">
+          <span class="status-badge">Slime</span>
+          <span class="status-badge">Demon Lord</span>
+          <span class="status-badge">Nascitus</span>
+        </div>
+        <p class="character-card__description">
+          Um homem comum que, após morrer de forma mundana, foi reencarnado como um slime em um mundo de fantasia.
+          Rimuru adquiriu a habilidade única "Predator" que lhe permite consumir e assimilar qualquer coisa. Com
+          determinação e criatividade, ele construiu seu próprio reino e conquistou o título de Demon Lord.
+        </p>
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-item__label">Inteligência</div>
+            <div class="stat-item__value">∞</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__label">Carisma</div>
+            <div class="stat-item__value">A+</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__label">Força</div>
+            <div class="stat-item__value">A</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__label">Velocidade</div>
+            <div class="stat-item__value">S</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h2 class="skills__title">Habilidades Únicas</h2>
+      <div class="skills__grid">
+        <div class="skill-card">
+          <div class="skill-card__icon">🍽️</div>
+          <div class="skill-card__name">Predator</div>
+          <div class="skill-card__description">Capacidade de consumir e assimilar qualquer coisa, adquirindo suas
+            propriedades.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">🌀</div>
+          <div class="skill-card__name">Wisdom King Raphael</div>
+          <div class="skill-card__description">IA que auxilia Rimuru em decisões estratégicas e oferece conselhos
+            sábios.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">⚡</div>
+          <div class="skill-card__name">Spatial Motion</div>
+          <div class="skill-card__description">Movimento instantâneo através do espaço, permitindo viagem ultra-rápida.
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">👥</div>
+          <div class="skill-card__name">Symbiote</div>
+          <div class="skill-card__description">Capacidade de criar cópias de si mesmo para realizar múltiplas tarefas.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>✨ Feito com criatividade e BEM CSS ✨</p>
+    </footer>
+  </div>
+  <script src="0.2-typescript.js"></script>
+</body>
+
+</html>
