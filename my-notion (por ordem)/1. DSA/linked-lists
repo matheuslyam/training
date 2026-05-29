@@ -1,0 +1,32 @@
+## Linked lists
+
+É um objeto um pouco diferente de um array, porque não necessariamente cada item ocupam espaços sequencialmente na memória. Não sabemos onde os itens estão.
+
+```markdown
+# Linked lists
+
+## best & worst cases
+
+1 | 2 | 3 | 4 
+
+Read
+- best
+	O(¹)
+	
+- worst
+	O(n)
+
+Insert
+- best
+	O(¹)
+
+- worst
+	O(n)
+
+Delete
+- best
+O(¹)
+
+- worst
+O(n)
+```

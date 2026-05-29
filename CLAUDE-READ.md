@@ -1,0 +1,23 @@
+essa pasta .old foi quando comecei de fato a estudar programação com o intuito de ser um programador um dia. foram duas aulas no youtube que eu asssiti, de 1h de duração cada uma (2h totais), da Fernanda Kipper, sobre javascript.
+
+você vai entender só de "bater o olho", mas em resumo, os MDs são para escrever o que estava aprendendo conforme assisti aos videos, e os arquivos js/ts são porque eu escrevia os códigos que via e fazia as primeiras escritas em código, mesmo sabend absolutamente nada, mas quis ter o contato inicial com código.
+
+essa pasta denominei .old porque não mexo mais aqui e não queria que os arquivos atrapalhassem os testes de implementação de leetcode que estava para começar.
+
+o arquivo @slime.html não fui eu quem fiz, foi apenas pq eu abria no navegador uma tela em branco e não queria mais ver a tela em branco e sim ver alguma coisa, pedi pro Claude fazer qualquer coisa que não fosse uma tela branca e dei o tema de slime datta ken como tema e falei pra ele ser criativo, mas tudo que eu usava era o dev tools (f12) para ver a aba "console" e testar os codigos que escrevia em js/ts. depois abandonei isso e passei a fazer a mesma coisa só que sem usar o "Go Live" no browser e passei apenas usar o console da IDE (muito mais prático e o burro aqui ainda não sabia que dava na mesma).
+
+ASSUMA QUE TUDO QUE ESTÁ ESCRITO nessa pasta de projeto (typescript-ts) eu escrevi, O QUE NÃO ESTÁ ESCRITO EU NÃO SEI / NÃO FIZ / NÃO CONHEÇO. e o que parece discrepante de mais pro meu conhecimento (tipo o html inteiro) é claramente uma LLM que fez por mim porque eu pedi.
+
+outra observação: eu aprendi a settar um ambiente de codar, então aprendi a dar bun init -y, depois eu setto um monorepo com uma pasta chamada "apps", contento api (todo o backend) e outra chamada web (contendo todo o front). como gosto de next.js com react pra front (mas é a IA que coda tudo, obvio, eu só gosto de usar msm), tudo que é relação a front eu peço pra codar, ai em api (todo o backend) eu passo a explorar manualmente, entender routes, middlewares, comecei aprender por cima usar app.get ou post ou put ou patch ou delete.
+(NESSE PROJETO EM ESPECÍFICO não tem nada que sustente isso que eu disse, já que não tem arquivos de route mostrando algo que fiz, mas só estou dizendo que comecei a fazer isso, mas logo parei se ficar settando ambientes e passei a focar em LEETCODE, o que nos faz chegar aqui).
+
+todos os arquivos aqui na raiz (com exceção de py.py, package.json, bun.lock e tsconfig.json que foi feito automatico pelos package que dei install ou add) foi eu quem escrevi (os exercícios de leetcode). claro, com orientação, muita ajuda das aulas do Galego ensinando a teoria e prática, e com o GPT dando um "live assist" pra eu conseguir concluir os desafios, mas eu foquei muito em aprender a lógica, como pensar, como passar a lógica pro código e escrever a sintaxe, etc.
+
+na pasta @my-notion contém todas as minhas anotações conforme eu avançava no curso, o que não existe/está faltando são as aulas que ainda não cheguei, o que já tem é o que já passei pelo conteúdo. isso estou fazendo agora, algo que vai dar ainda mais detalhe e contexto sobre o que estudei, mais do que só ver os leetcodes. 
+então lembre-se, esta pasta é apenas para "simular" meu notion para você ver minhas anotações, terão alguns arquivos que não tem nada escrito justamente porque não escrevi nada lá no notion, talvez por não precisar, talvez por ser uma aula apenas para ser vista e não anotada e estudada depois, enfim. (LEIA TUDO)
+
+# em resumo
+
+importante de saber para enriquecimento de contexto é a pasta @my-notion (os arquivos são importantes, as pastas apenas ditam cada módulo, mas metade deles ainda não cheguei lá, então leia arquivos e deduza que eu sei tudo que está criado em arquivo, mesmo que nada escrito nele, mas vi e implementei na prática ou aprofundei).
+a pasta raiz onde tem os leetcodes. eu gosto de escreve-los aqui enquanto penso, testo, crio meu raciocínio, erro, conserto, rodo incansavelmente bun file.ts até dar o resultado do exercício, etc.
+e a pasta .old que foi quando comecei a aprender de algum lugar (grátis no YT os fundamentos de js que decidi aprender como linguagem principal, e depois mudei pra aprender ts). lá eu ainda não tinha comprado o curso de data structure & algorithms, então só tem coisas básicas e fundamentos básicos, mas eu tinha que começar de algum lugar né!
